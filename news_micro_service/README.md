@@ -1,0 +1,1 @@
+# a micro service - news service
