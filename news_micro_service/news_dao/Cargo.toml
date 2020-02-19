@@ -1,9 +1,17 @@
 [package]
 name = "news_dao"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Simon <zengweiking@outlook.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+news_contract = { path = "../news_contract" }
+postgres = "0.17.1"
+actix-web = "2.0.0"
+actix-rt = "1.0.0"
+futures = "0.3.4"
+tokio-postgres = "0.5.2"
+tokio = "0.2.11"
+uuid = {version="0.8.1",features=["v4"]}
