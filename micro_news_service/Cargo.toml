@@ -3,5 +3,5 @@ members = [
     "news_contract",
     "news_dao",
     "news_migrations",
-    "news_service"
+    "news_service",
 ]
