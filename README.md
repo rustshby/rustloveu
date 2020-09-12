@@ -20,3 +20,12 @@ $ wget 'https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup
 $ chmod a+x rustup-init
 $ ./rustup-init
 ```
+
+## Mirror for crates in ~/.cargo/config:
+```
+[source.crates-io]
+replace-with = 'tuna'
+
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+``` 
