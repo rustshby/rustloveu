@@ -99,6 +99,56 @@ impl fmt::Display for List {
     }
 }
 
+// format string:
+// format!("{}", foo) -> "3735928559"
+// format!("0x{:X}", foo) -> "0xDEADBEEF"
+// format!("0o{:o}", foo) -> "0o33653337357"
+#[allow(dead_code)]
+#[derive(Debug)]
+struct City {
+    name: &'static str,
+    latitude: f32,
+    longitude: f32,
+}
+
+impl fmt::Display for City {
+    // `f` is a buffer, and this method must write the formatted string into it
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let lat_c = if self.latitude >= 0.0 { 'N' } else { 'S' };
+        let lon_c = if self.longitude >= 0.0 { 'E' } else { 'W' };
+        write!(
+            f,
+            "{name}: {lat:.3}°{latc} {lon:.3}°{lonc}",
+            name = self.name,
+            lat = self.latitude.abs(),
+            latc = lat_c,
+            lon = self.longitude.abs(),
+            lonc = lon_c
+        )
+    }
+}
+
+#[allow(dead_code)]
+#[derive(Debug)]
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
+
+impl fmt::Display for Color {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(
+            f,
+            "RGB ({red}, {green}, {blue}) {rgb}",
+            red = self.red,
+            green = self.green,
+            blue = self.blue,
+            rgb = format!("0x{:02X}{:02X}{:02X}", self.red, self.green, self.blue)
+        )
+    }
+}
+
 /// display_show shows some difference for fmt::Debug and fmt::Display differences.
 ///
 #[allow(dead_code)]
@@ -118,4 +168,24 @@ pub fn display_show() {
     println!("Compare List:");
     println!("Display: {}", v);
     println!("Debug: {:?}", v);
+
+    println!("Compare cities:");
+    for city in [
+        City { name: "Dublin", latitude: 53.347778, longitude: -6.259722 },
+        City { name: "Oslo", latitude: 59.95, longitude: 10.75 },
+        City { name: "Vancouver", latitude: 49.25, longitude: -123.1 },
+    ].iter() {
+        println!("Display: {}", *city);
+        println!("Debug: {:?}", *city);
+    }
+
+    println!("Compare colors:");
+    for color in [
+        Color { red: 128, green: 255, blue: 90 },
+        Color { red: 0, green: 3, blue: 254 },
+        Color { red: 0, green: 0, blue: 0 },
+    ].iter() {
+        println!("Display: {}", *color);
+        println!("Debug: {:?}", *color);
+    }
 }
