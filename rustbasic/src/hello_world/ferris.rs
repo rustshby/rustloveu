@@ -1,3 +1,9 @@
+//! hello_world::ferris mod
+//!
+//! This module uses ferris_say module to show messages
+//! on the standard output
+
+
 use ferris_says::say;
 use std::io::{stdout, BufWriter};
 

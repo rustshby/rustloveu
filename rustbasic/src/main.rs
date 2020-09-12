@@ -1,4 +1,4 @@
-
+//! main entry
 
 mod hello_world;
 use hello_world::ferris as hello_world_ferris;
