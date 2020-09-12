@@ -41,8 +41,9 @@ pub fn debug_show() {
 
     println!("Now {:?} will print!", DebugPrintable(520));
     println!("Now {:?} will print!", Deep(DebugPrintable(520)));
-    
-    // fmt::Debug definitely makes this printable but sacrifices some elegance. Rust also provides "pretty printing" with {:#?}.
+
+    // fmt::Debug definitely makes this printable but sacrifices some elegance.
+    // Rust also provides "pretty printing" with {:#?}.
     println!("Now {:#?} will print!", DebugPrintable(520));
     println!("Now {:#?} will print!", Deep(DebugPrintable(520)));
 }
