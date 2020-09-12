@@ -1,4 +1,4 @@
-//! hello_world::ferris mod
+//! hello_world::ferris module
 //!
 //! This module uses ferris_say module to show messages
 //! on the standard output

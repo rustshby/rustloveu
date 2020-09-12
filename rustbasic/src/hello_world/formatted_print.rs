@@ -1,4 +1,4 @@
-//! formated_print module shows the basic printing by a seris of macros
+//! hello_world::formated_print module shows the basic printing by a seris of macros
 //! defined in std::fmt
 //!
 //! format! - write formatted text to String
@@ -10,7 +10,14 @@
 //! eprint! - same as format! but the text is printed to the standard error (io::stderr).
 //!
 //! eprintln! - same as eprint! but a new line is append.alloc
-
+//! 
+//! # std::fmt 
+//! contains many traits which govern the display of text.
+//! The base form of two import ones are:
+//! 
+//! fmt::Debug - Uses the {:?} marker. Format text for debugging purposes.
+//!     
+//! fmt::Display - Uses the {} marker. Format text in a more elegant, use friendly fashion.
 
 
 /// formatted_show shows some formated features
