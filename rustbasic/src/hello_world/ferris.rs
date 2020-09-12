@@ -9,6 +9,7 @@ use std::io::{stdout, BufWriter};
 
 /// ferris_show shows some message on the standard output
 ///
+#[allow(dead_code)]
 pub fn ferris_show(message: &str) {
     let stdout = stdout();
     let width = message.chars().count();
