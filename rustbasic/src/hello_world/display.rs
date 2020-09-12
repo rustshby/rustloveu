@@ -33,6 +33,7 @@ impl fmt::Display for DisplayPrintable {
         // the operation successed or failed.
         // Note that `write!` use syntax which is very similar to `println!`
         write!(f, "{}", self.0)
+        //Ok(write!(f, "{}", self.0)?)
     }
 }
 
@@ -64,6 +65,40 @@ impl fmt::Display for Point2D {
     }
 }
 
+// Define a structure named `List` containing a `Vec`.
+#[allow(dead_code)]
+#[derive(Debug)]
+struct List(Vec<i32>);
+
+// Implementing fmt::Display for a structure
+// where the elements must each be handled sequentially is tricky.
+// The problem is that each write! generates a fmt::Result.
+// Proper handling of this requires dealing with all the results.
+// Rust provides the ? operator for exactly this purpose.
+impl fmt::Display for List {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // Extract the value using tuple indexing,
+        // and create a reference to `vec`.
+        let vec = &self.0;
+
+        write!(f, "[")?;
+
+        // Iterate over `v` in `vec` while enumerating the iteration
+        // count in `count`.
+        for (count, v) in vec.iter().enumerate() {
+            // For every element except the first, add a comma.
+            // Use the ? operator, or try!, to return on errors.
+            if count != 0 {
+                write!(f, ", ")?;
+            }
+            write!(f, "{}", v)?;
+        }
+
+        // Close the opened bracket and return a fmt::Result value.
+        write!(f, "]")
+    }
+}
+
 /// display_show shows some difference for fmt::Debug and fmt::Display differences.
 ///
 #[allow(dead_code)]
@@ -78,4 +113,9 @@ pub fn display_show() {
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
     println!("Debug Beauti: {:#?}", point);
+
+    let v = List(vec![1, 2, 3]);
+    println!("Compare List:");
+    println!("Display: {}", v);
+    println!("Debug: {:?}", v);
 }
