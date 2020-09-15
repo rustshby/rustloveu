@@ -3,6 +3,7 @@
 //! This module uses ferris_say module to show messages
 //! on the standard output
 
+extern crate ferris_says;
 
 use ferris_says::say;
 use std::io::{stdout, BufWriter};
