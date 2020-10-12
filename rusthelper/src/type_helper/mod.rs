@@ -1,2 +1,0 @@
-//! type_helper mod
-//!

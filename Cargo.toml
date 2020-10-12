@@ -1,5 +1,7 @@
 [workspace]
 members = [
     "rustbasic",
-    "rusthelper"
+    "algorithms",
+    "leetcode",
+    "tests"
 ]

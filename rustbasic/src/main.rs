@@ -1,8 +1,10 @@
 //! main entry
+//! 
+
+extern crate algorithms;
+extern crate leetcode;
 
 mod hello_world;
-mod leetcode;
-mod algorithms;
 
 /// main runs the result
 fn main() {
@@ -11,7 +13,8 @@ fn main() {
     hello_world::ferris::ferris_show("Hello, world! Rust Loves You!");
     hello_world::debug::debug_show();
     hello_world::display::display_show();
-    leetcode::two_number::run_two_sum(vec![2, 7, 11, 15], 9);
-    algorithms::stoogesort::stooge_sort_works();
-    algorithms::quicksort::quick_sort_works();
+    leetcode::two_sum_works();
+    algorithms::heap_sort_works();
+    algorithms::quick_sort_works();
+    algorithms::stooge_sort_works();
 }

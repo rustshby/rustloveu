@@ -10,7 +10,7 @@
 
 use std::collections::HashMap;
 
-fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut mm: HashMap<i32, i32> = HashMap::new();
     for (i, v) in nums.iter().enumerate() {
         match mm.get(&(target - v)) {
@@ -23,14 +23,4 @@ fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         }
     }
     vec![]
-}
-
-#[allow(dead_code)]
-pub fn run_two_sum(nums: Vec<i32>, target: i32) {
-    let result = two_sum(nums, target);
-
-    // use & to loop vec, this will not lose ownership
-    for i in &result {
-        println!("{}", i)
-    }
 }
