@@ -17,4 +17,5 @@ fn main() {
     algorithms::heap_sort_works();
     algorithms::quick_sort_works();
     algorithms::stooge_sort_works();
+    algorithms::comb_sort_works();
 }
