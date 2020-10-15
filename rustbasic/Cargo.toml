@@ -10,3 +10,4 @@ edition = "2018"
 ferris-says = "0.2.0"
 algorithms = { path = "../algorithms" }
 leetcode = { path = "../leetcode" }
+cratesdepends = { path = "../cratesdepends" }

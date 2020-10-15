@@ -11,10 +11,7 @@ pub fn two_sum_works() {
     let target = 9;
     let result = twonumber::two_sum(nums, target);
 
-    // use & to loop vec, this will not lose ownership
-    for i in &result {
-        println!("{:?}", i);
-    }
+    println!("{:?}", result);
 }
 
 

@@ -3,5 +3,6 @@ members = [
     "rustbasic",
     "algorithms",
     "leetcode",
+    "cratesdepends",
     "tests"
 ]

@@ -3,6 +3,9 @@
 
 extern crate algorithms;
 extern crate leetcode;
+extern crate cratesdepends;
+
+use cratesdepends::redis_help;
 
 mod hello_world;
 
@@ -18,4 +21,5 @@ fn main() {
     algorithms::quick_sort_works();
     algorithms::stooge_sort_works();
     algorithms::comb_sort_works();
+    println!("{:?}", redis_help::fetch_an_integer())
 }
