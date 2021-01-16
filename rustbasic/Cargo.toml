@@ -8,6 +8,3 @@ edition = "2018"
 
 [dependencies]
 ferris-says = "0.2.0"
-algorithms = { path = "../algorithms" }
-leetcode = { path = "../leetcode" }
-cratesdepends = { path = "../cratesdepends" }

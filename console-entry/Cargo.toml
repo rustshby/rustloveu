@@ -1,0 +1,13 @@
+[package]
+name = "console_entry"
+version = "0.1.0"
+authors = ["gina"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+algorithms = { path = "../algorithms" }
+leetcode = { path = "../leetcode" }
+cratesdepends = { path = "../cratesdepends" }
+rustbasic = { path = "../rustbasic" }

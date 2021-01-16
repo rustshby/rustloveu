@@ -4,5 +4,6 @@ members = [
     "algorithms",
     "leetcode",
     "cratesdepends",
-    "tests"
+    "tests",
+    "console-entry"
 ]

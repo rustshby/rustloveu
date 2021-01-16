@@ -12,3 +12,4 @@ pub mod formatted_print;
 pub fn basic_show_helloworld() {
     println!("Hello, world!")
 }
+
